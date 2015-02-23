@@ -9,4 +9,4 @@ can spend less time thinking and more time munching!
 
 This app is written in Python and powered by the Google Application Engine.
 
-###View the site live at [mmmorblegh.appspot.com](mmmorblegh.appspot.com).
+###View the site live at [mmmorblegh.appspot.com](http://www.mmmorblegh.appspot.com/).
