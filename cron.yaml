@@ -1,0 +1,4 @@
+cron:
+- description: send admin feedback then delete feedback
+  url: /mail_feedback
+  schedule: every 48 hours

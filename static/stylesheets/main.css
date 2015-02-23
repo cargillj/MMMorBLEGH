@@ -1,0 +1,562 @@
+@font-face {
+    font-family: 'blackjackregular';
+    src: url('fonts/blackjack_regular_macroman/black_jack-webfont.eot');
+    src: url('fonts/blackjack_regular_macroman/black_jack-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/blackjack_regular_macroman/black_jack-webfont.woff') format('woff'),
+         url('fonts/blackjack_regular_macroman/black_jack-webfont.ttf') format('truetype'),
+         url('fonts/blackjack_regular_macroman/black_jack-webfont.svg#blackjackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'komika_axisregular';
+    src: url('fonts/komikaaxis_regular_macroman/KOMIKAX_-webfont.eot');
+    src: url('fonts/komikaaxis_regular_macroman/KOMIKAX_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/komikaaxis_regular_macroman/KOMIKAX_-webfont.woff') format('woff'),
+         url('fonts/komikaaxis_regular_macroman/KOMIKAX_-webfont.ttf') format('truetype'),
+         url('fonts/komikaaxis_regular_macroman/KOMIKAX_-webfont.svg#komika_axisregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+	background-image: url('patterns/stardust.png');
+	margin: 0 0 0 0;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+#header {
+	background-color: #77757F;
+	text-align: center;
+	font-family: komika_axisregular;
+	margin:-1.5em 0 -.5em;
+}
+
+#title {
+	font-size: 4em;
+	text-shadow: 1px 1px 0px black;
+	display: inline;
+}
+
+#title:hover {
+	text-shadow: 0px 0px 10px black;
+	-webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+#title_mmm {
+	display: inherit;
+	margin-right: -.4em;
+	color: #94BF85;
+}
+
+#title_or {
+	display: inherit;
+	color: #D7D3E5;
+	font-family: blackjackregular;
+}
+
+#title_blegh {
+	display: inherit;
+	margin-left: -.15em;
+	color: #DE897A;
+}
+
+#navbar {
+	text-align: center;
+	background-color: #333333;
+	box-shadow: 0px 0px 5px inset;
+}
+
+#navbar a {
+	font-size: 1.25em;
+	font-family: blackjackregular;
+	color: #D7D3E5;
+	display: inline;
+	padding: 0 3em 0 3em;
+}
+
+#navbar a:hover {
+	color: #9993B2;
+	text-shadow: 1px 1px 0px black;
+	transition-duration: 0.25s;
+}
+
+#filter_button {
+	font-size: 1.25em;
+	font-family: blackjackregular;
+	color: #D7D3E5;
+	display: inline;
+	padding: 0 3em 0 3em;
+	cursor: pointer;
+}
+
+#filter_button:hover {
+	color: #9993B2;
+	text-shadow: 1px 1px 0px black;
+	transition-duration: 0.25s;
+}
+
+#filter_container {
+	float: right;
+	width: 318px;
+}
+
+#filter_menu {
+	display: none;
+	width: 200px;
+	font-size: 1.25em;
+	color: #D7D3E5;
+	background: -webkit-linear-gradient(#77757F, #4F4F4F); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#77757F, #4F4F4F); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#77757F, #4F4F4F); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#77757F, #4F4F4F); /* Standard syntax */
+	box-shadow: 0px 0px 5px black inset;
+	border-bottom-right-radius: 5px; 
+	border-bottom-left-radius: 5px;
+	position: absolute;
+}
+
+#filter_menu form button {
+	width: 100%;
+	color: #D7D3E5;
+	font-size: .75em;
+	font-family: komika_axisregular;
+	background-color: rgba(0, 0, 0, .5);
+	border-color: rgba(0, 0, 0, .25);
+	border-bottom-right-radius: 5px; 
+	border-bottom-left-radius: 5px; 
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+input[type=checkbox] + label{
+	color: #DE897A;
+	cursor: pointer;
+	padding-left: .5em;
+}
+
+input[type=checkbox]:checked + label {
+	color: #94BF85;
+}
+
+.checkbox_selection {
+	font-family: sans-serif;
+	font-size: 1em; 
+}
+
+.checkbox_selection:nth-child(even){
+	background-color: rgba(0,0,0,0.2);
+}
+
+#grid {
+	width: 800px;
+	margin: auto auto;
+	font-family: sans-serif;
+	color: white;
+}
+
+#popup {
+	display: none;
+	background-image: url('patterns/triangular.png');
+	width: 600px;
+	margin: 50px auto 0 auto;
+	height: 200px;
+	border-radius: 5px;
+	border: solid 2px #777777;
+	position: absolute;
+	padding: 2em;
+	box-shadow: 0px 0px 5px black;
+}
+
+#popup_container {
+	width: 600px;
+	margin: auto auto;
+}
+
+#popup_title {
+	font-size: 3em;
+	width: 100%;
+	text-align: center;
+	text-shadow: 2px 2px 0px black;
+}
+
+#popup_divider {
+	width: 100%;
+	height: 2px;
+	background-color: #777777;
+}
+
+#popup_desc {
+	font-size: 1.5em;
+	width: 100%;
+	text-align: center;
+}
+
+button[id="close_popup"] {
+	width: 100%;
+	color: #D7D3E5;
+	font-size: 1.25em;
+	font-family: komika_axisregular;
+	background-color: rgba(0, 0, 0, .5);
+	border-color: rgba(0, 0, 0, .25);
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#grid_a {
+	float: left;
+	width: 50%;
+}
+
+#grid_b {
+	float: right;
+	width: 50%;
+}
+
+.restaurant {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: .2em;
+	cursor: pointer;
+}
+
+.restaurant:hover {
+	width: 95%;
+	box-shadow: 1px 1px 5px #000000;
+	transition-duration: 0.25s;
+}
+
+#grid_a .restaurant {
+	background-color: rgba(148,191,133,0.75);
+}
+
+#grid_b .restaurant {
+	background-color: rgba(222,137,122,0.75);
+}
+
+.name {
+	font-size: 1.25em;
+	text-shadow: 1px 1px 5px black;
+	font-weight: bold;
+}
+
+.type {
+	font-size: .75em;
+	float: left;
+	margin-left: 1em;
+	width: 80%;
+	text-align: left; 
+}
+
+.cost {
+	font-size: .75em;
+}
+
+button[id="rand_button"] {
+	width: 100%;
+	color: #D7D3E5;
+	font-size: 1.25em;
+	font-family: komika_axisregular;
+	background-color: rgba(0, 0, 0, .5);
+	border-color: rgba(0, 0, 0, .25);
+	cursor: pointer;
+}
+
+.page {
+	width: 800px;
+	font-family: sans-serif;
+	color: white;
+	margin: auto auto;
+	height: 85%;
+	background-color: rgba(0, 0, 0, .25);
+	border: solid 1px rgba(255, 255, 255, .25);
+	border-radius: 5px;
+}
+
+.page h1 {
+	font-family: komika_axisregular;
+	font-size: 3em;
+	margin: 0 15px;
+}
+
+.page h2 {
+	font-family: sans-serif;
+	font-size: 2em;
+	margin: 0 30px; 
+}
+
+.page p {
+	width: 80%;
+	display: block;
+	margin: auto auto;
+}
+
+.page img {
+	width: 250px;
+	height: 250px;
+	margin: auto auto;
+	border: solid 3px white;
+	display: block;
+}
+
+#facebook_buttons {
+	background-color: rgba(255,255,255,0.25);
+	margin-top: 5px;
+	text-align: center;
+}
+
+.page textarea {
+	font-family: sans-serif;
+	resize: none;
+	display: inline;
+	color: white;
+	background-color: rgba(0, 0, 0, .5);
+	border: solid 1px rgba(255, 255, 255, .25);
+	border-radius: 5px;
+}
+
+.page textarea:hover {
+	border: solid 1px #94BF85;
+	transition-duration: 0.25s;
+}
+
+.page input[type="submit"]:hover {
+	border: solid 1px #94BF85;
+	transition-duration: 0.25s;
+}
+
+.page input[type="submit"] {
+	color: white;
+	background-color: rgba(0, 0, 0, .5);
+	border: solid 1px rgba(255, 255, 255, .25);
+	border-radius: 5px;
+}
+
+.page #greeting {
+	display: inline;
+	margin-left: 20px;
+}
+
+.form_entry {
+	margin-left: 80px;
+}
+
+#user {
+	font-family: komika_axisregular;
+	display: inline;
+}
+
+@media only screen
+and (max-device-width : 800px) {
+	#header {
+		background: -webkit-linear-gradient(#77757F, #4F4F4F); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#77757F, #4F4F4F); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#77757F, #4F4F4F); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#77757F, #4F4F4F); /* Standard syntax */
+		margin:-2em 0 -2em;
+	}
+
+	#title {
+		font-size: 6em;
+	}
+
+	#navbar {
+		margin-bottom: .25em;
+		box-shadow: 0 0 5px black;
+		background: -webkit-linear-gradient(#333333, #424242); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#333333, #424242); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#333333, #424242); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#333333, #424242); /* Standard syntax */
+	}
+
+	#navbar a {
+		font-size: 4em;
+		padding: 0 1em 0 1em;
+		border-right: solid 1px #121212;
+		border-left: solid 1px #121212;
+	}
+	#filter_button {
+		font-size: 4em;
+		padding: 0 1em 0 1em;
+		border-right: solid 1px #121212;
+		border-left: solid 1px #121212;
+	}
+
+	#filter_menu {
+		width: 100%;
+		box-shadow: 0px 0px 5px black;
+		border-radius: 5px;
+		position: fixed;
+		left: 0px;
+	}
+	#filter_menu form button {
+		font-size: 3em;
+	}
+	.checkbox_selection {
+		font-size: 4em;
+	}
+
+	#grid {
+		width: 100%;
+		margin-bottom: .25em;
+	}
+
+	#popup_container {
+		width: 100%;
+	}
+
+	#popup {
+		width: 100%;
+		height: 1100px;
+		padding: 0;
+		position: fixed;
+		box-shadow: 0px 0px 1000px black;
+		border: solid 3px #777777;
+	}
+
+	#popup_title {
+		font-size: 7em;
+		margin-left: 20px;
+		text-align: left;
+	}
+
+	#popup_divider {
+		height: 15px;
+	}
+
+	#popup_desc {
+		font-size: 4.5em;
+		margin-left: 20px;
+		margin-right: 20px;
+		width: 98%;
+		text-align: left;
+		text-shadow: 2px 2px 0px black;
+	}
+
+	button[id="close_popup"] {
+		font-size: 4em;
+		position: absolute;
+		bottom: 0;
+	}
+
+	.restaurant {
+		width: 99.5%;
+	}
+
+	.restaurant:hover {
+		width: 99.5%;
+		box-shadow: 0px 0px 0px #000000;
+		transition-duration: 0s;
+	}
+
+	.name {
+		font-size: 4em;
+	}
+
+	.type {
+		font-size: 2em;
+	}
+
+	.cost {
+		font-size: 2em;
+	}
+
+	.page {
+		width: 95%;
+		height: 100%;
+		margin: 0 auto 2em auto;
+		border: solid 3px rgba(255, 255, 255, .25);
+		border-radius: 10px;
+	}
+
+	.page h1 {
+		font-size: 5em;
+		margin-left: 50px;
+	}
+
+	.page h2 {
+		font-size: 4em;
+		margin: 40px 0 0 0;
+	}
+
+	.page p {
+		font-size: 3em;
+		text-align: justify;
+	}
+
+	.page img {
+		width: 500px;
+		height: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.page form {
+		margin: 20px auto 0 auto;
+		width: 97.5%;
+	}
+
+	.page #greeting {
+		font-size: 2em;
+		width: 100%;
+		margin: 0 0 0 150px;
+	}
+
+	.form_entry {
+		margin: 0;
+		font-size: 3em;
+	}
+
+	.form_entry textarea {
+		margin: auto auto;
+		width: 99%;
+		font-size: 1.5em;
+		border: solid 3px rgba(255, 255, 255, .25);
+		border-radius: 10px;
+	}
+
+	.form_entry input[type=submit] {
+		width: 100%;
+		margin: 0 0 10px 0;
+		font-family: komika_axisregular; 
+		font-size: 1.5em;
+		background: -webkit-linear-gradient(#4F4F4F, #77757F); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#4F4F4F, #77757F); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#4F4F4F, #77757F); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#4F4F4F, #77757F); /* Standard syntax */
+	}
+
+	button[id="rand_button"] {
+		font-size: 4em;
+		background: -webkit-linear-gradient(#4F4F4F, #77757F); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#4F4F4F, #77757F); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#4F4F4F, #77757F); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#4F4F4F, #77757F); /* Standard syntax */
+	}
+
+	#facebook_buttons {
+		height: 50px;
+	}
+
+	#fbiframe {
+		transform: scale(4);
+		-ms-transform: scale(4); 
+		-webkit-transform: scale(4); 
+		-o-transform: scale(4); 
+		-moz-transform: scale(4);
+	}
+}

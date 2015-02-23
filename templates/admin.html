@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+	<head>
+		<title>mmmORblegh - Admin</title>
+		<meta name='description' content='Want to know whats for dinner?  Use mmmORblegh!'/>
+
+		<!-- for Facebook -->          
+		<meta property="og:title" content="Find the right Corvallis restaurant for dinner tonight!" />
+		<meta property="og:site_name" content="mmmORblegh"/>
+		<meta property="og:url" content="http://www.mmmorblegh.appspot.com/"/>
+		<meta property="og:description" content="Riva's?  McMenamins?  Choosing a restaurant to dine at can be a hard decision, but mmmORblegh is here to help."/>
+		<meta property="og:image" content="http://www.mmmorblegh.appspot.com/static/images/fb_meta_image.jpg"/>
+
+		<link rel="stylesheet" type="text/css" href="static/stylesheets/main.css"/>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="static/scripts/admin.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<div id="title">
+				<a href="/">
+					<div id="title_mmm">mmm</div>
+					<div id="title_or">or</div>
+					<div id="title_blegh">blegh</div>
+				</a>
+			</div>
+		</div>
+		<div id="navbar">
+			<a href="/about" >About</a>
+			<a href="/feedback" >Feedback</a>
+			<a href={{logout}}>Logoff</a>
+		</div>
+		<div class="page">
+			<h1>Admin Console</h1>
+			<div id="greeting">Welcome, <div id="user">{{username}}</div>
+			</div>
+			<h2>Add Restaurant</h2>
+			<form name="add_restaurant" onsubmit="return validateForm()" action="/add_restaurant" method="post" autocomplete="on">
+				<div class="form_entry">
+					Name:<br>
+					<textarea name="name" rows="1" cols="40"></textarea>
+				</div>
+				<div class="form_entry">
+					Nationality:<br>
+					<textarea name="nationality" rows="1" cols="30" placeholder="American, Mexican, Indian, etc." autocomplete="on"></textarea>
+				</div>
+				<div class="form_entry">
+					Cost:<br>
+					<textarea name="cost" rows="1" cols="15" placeholder="$-low	$$$$-high" autocomplete="on"></textarea>
+				</div>
+				<div class="form_entry">
+					Random Description:<br>
+					<textarea name="random_description" rows="2" cols="50" placeholder="Something to say when a user receives a random restaurant"></textarea>
+				</div>
+				<div class="form_entry">
+					<input type="submit" value="Submit Restaurant"/>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
+{% endautoescape %}

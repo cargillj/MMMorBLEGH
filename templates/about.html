@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+	<head>
+		<title>mmmORblegh - About</title>
+		<meta name='description' content='Want to know whats for dinner?  Use mmmORblegh!'/>
+
+		<!-- for Facebook -->          
+		<meta property="og:title" content="Find the right Corvallis restaurant for dinner tonight!" />
+		<meta property="og:site_name" content="mmmORblegh"/>
+		<meta property="og:url" content="http://www.mmmorblegh.appspot.com/"/>
+		<meta property="og:description" content="Riva's?  McMenamins?  Choosing a restaurant to dine at can be a hard decision, but mmmORblegh is here to help."/>
+		<meta property="og:image" content="http://www.mmmorblegh.appspot.com/static/images/fb_meta_image.jpg"/>
+
+		<link rel="stylesheet" type="text/css" href="static/stylesheets/main.css"/>
+		<script src="static/scripts/about.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<div id="header">
+			<div id="title">
+				<a href="/">
+					<div id="title_mmm">mmm</div>
+					<div id="title_or">or</div>
+					<div id="title_blegh">blegh</div>
+				</a>
+			</div>
+		</div>
+		<div id="navbar">
+			<a href="/about" >About</a>
+			<a href="/feedback" >Feedback</a>
+		</div>
+		<div class="page">
+				<h1>About</h1>
+				<p>mmmORblegh is a web application created to help users in the Corvallis area find the place they want to eat.  If you have comments or suggestions please refer to the Feedback section which is checked frequently.  Come back often for your dinnertime decisions.  Thanks.</p>
+				<img src="static/images/fb_meta_image_small.jpg"/>
+				<div id="facebook_buttons">
+					<div id="fbiframe">
+					<div class="fb-like" data-href="http://www.mmmorblegh.appspot.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+					</div>
+				</div>
+				<div class="fb-facepile" data-href="http://www.mmmorblegh.appspot.com/" data-width="400" data-height="300" data-max-rows="1" data-colorscheme="dark" data-size="large" data-show-count="true"></div>
+		</div>
+	</body>
+</html>
+{% endautoescape %}

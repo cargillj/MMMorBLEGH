@@ -1,0 +1,77 @@
+{% autoescape true %}
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>mmmORblegh</title>
+	<meta name='description' content='Want to know whats for dinner?  Use mmmORblegh!'/>
+	
+
+	<!-- for Facebook -->          
+	<meta property="og:title" content="Find the right Corvallis restaurant for dinner tonight!" />
+	<meta property="og:site_name" content="mmmORblegh"/>
+	<meta property="og:url" content="http://www.mmmorblegh.appspot.com/"/>
+	<meta property="og:description" content="Riva's?  McMenamins?  Choosing a restaurant to dine at can be a hard decision, but mmmORblegh is here to help."/>
+	<meta property="og:image" content="http://www.mmmorblegh.appspot.com/static/images/fb_meta_image.jpg"/>
+	
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="static/scripts/jquery.mobile.custom.js"></script>
+	<script src="static/scripts/index.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="static/stylesheets/main.css"/>
+</head>
+
+<body>
+	<div id="header">
+		<div id="title">
+			<a href="/">
+				<div id="title_mmm">mmm</div>
+				<div id="title_or">or</div>
+				<div id="title_blegh">blegh</div>
+			</a>
+		</div>
+	</div>
+	<div id="navbar">
+		<a href="/about" >About</a>
+		<a href="/feedback" >Feedback</a>
+		<div id="filter_button">Filters</div>
+	</div>
+	<div id="grid">
+		<div id="popup_container">
+			<div id="popup">
+				<div id="popup_title"></div>
+				<div id="popup_divider"></div>
+				<div id="popup_desc"></div>
+				<button id="close_popup" type="button" onclick="$('#popup').slideToggle();">Close</button>
+			</div>
+		</div>
+		<div id="filter_container">
+			<div id="filter_menu">
+				<form action="/" method="get">
+					{% for restaurant in nationalities %}
+					<div class="checkbox_selection">
+						<input type="checkbox" name="{{restaurant.nationality}}" id="{{restaurant.nationality}}"/>
+						<label for="{{restaurant.nationality}}">{{restaurant.nationality}}</label>
+					</div>
+					{% endfor %}
+					<button type="submit">Filter Choices</button>
+				</form>
+			</div>
+		</div>
+		<div id="grid_a">
+			{% for restaurant in restaurants %}
+			<div class="restaurant" title ="{{restaurant.random_description}}">
+				<div class="name">{{restaurant.name}}</div>
+				<div class="type">{{restaurant.nationality}}</div>
+				<div class="cost">{{restaurant.cost}}</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div id="grid_b"></div>
+		<button id="rand_button" type="button" onclick=randomRestaurant()>Random Restaurant</button>
+	</div>
+	<script>
+		
+	</script>
+</body>
+</html>
+{% endautoescape %}
